@@ -1,6 +1,10 @@
-// background.js - open a persistent popup window when the action is clicked
-const api = (typeof browser !== 'undefined') ? browser : chrome;
+import browser from 'webextension-polyfill';
+import type { Browser } from 'webextension-polyfill';
 
+declare const chrome : Browser;
+const api: Browser = (typeof browser !== 'undefined') ? browser : chrome;
+
+// background.js - open a persistent popup window when the action is clicked
 function openWindow() {
   try {
     const url = api.runtime.getURL('popup.html');

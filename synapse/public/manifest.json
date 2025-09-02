@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "Ouvrir Synapse",
+  "version": "1.0.0",
+  "description": "Extension moderne avec React + Vite",
+  "browser_action": {
+    "default_title": "Ouvrir Synapse"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "icons": {
+    "48": "icons/vite.svg",
+    "128": "icons/vite.svg"
+  }
+}

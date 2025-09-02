@@ -1,8 +1,9 @@
 #root {
-  width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .logo {
@@ -39,4 +40,62 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Reset default styles */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Popup specific styles */
+.popup-root {
+  width: 100vw;
+  height: 100vh;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.topbar {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  background: #ff9100;
+}
+
+.canvas {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  margin: 4px;
+  border-radius: 4px;
+}
+
+.toolbar {
+  padding: 4px;
+  display: flex;
+  gap: 8px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.toolbar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  min-width: 32px;
+  height: 32px;
+}
+
+.toolbar_icon {
+  width: 32px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }

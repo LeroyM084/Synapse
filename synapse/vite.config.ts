@@ -6,7 +6,6 @@ import { dirname, resolve } from 'path'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-// Build config for browser extension popup
 export default defineConfig({
   plugins: [react()],
   build: {
@@ -14,12 +13,17 @@ export default defineConfig({
     rollupOptions: {
       input: {
         popup: resolve(__dirname, 'popup.html'),
-        // keep index for local dev if needed
-        index: resolve(__dirname, 'index.html'),
+        background: resolve(__dirname, 'src/background.ts'),
+        // content: resolve(__dirname, 'src/content-script.ts')
       },
       output: {
-        // keep filenames stable for extension manifest
-        entryFileNames: 'assets/[name].js',
+        format: 'es',               // ✅ ESM moderne
+        inlineDynamicImports: false,
+        entryFileNames: (chunk) => {
+          if (chunk.name === 'background') return 'background.js'
+          if (chunk.name === 'content') return 'content-script.js'
+          return 'assets/[name].js'
+        },
         chunkFileNames: 'assets/[name].js',
         assetFileNames: 'assets/[name].[ext]'
       }
