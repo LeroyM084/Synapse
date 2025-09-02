@@ -10,6 +10,8 @@ type BubbleProps = {
   onContentChange: (id: string, content: string) => void;
   onStartMove: (id: string, e: React.MouseEvent) => void;
   onStartResize: (id: string, e: React.MouseEvent) => void;
+  onStartLink: (id: string, side: string, e: React.MouseEvent) => void;
+  onFinishLink: (id: string, side: string, e: React.MouseEvent) => void;
 };
 
 export const Bubble: React.FC<BubbleProps> = ({
@@ -18,13 +20,14 @@ export const Bubble: React.FC<BubbleProps> = ({
   onContentChange,
   onStartMove,
   onStartResize,
+  onStartLink,
+  onFinishLink,
 }) => {
   const textRef = useRef<HTMLDivElement | null>(null);
 
   // focus le contenu quand c'est une nouvelle bulle texte vide
   useEffect(() => {
     if (data.type === "text" && data.content === "" && textRef.current) {
-      // place caret at start
       const el = textRef.current;
       el.focus();
       const range = document.createRange();
@@ -47,29 +50,40 @@ export const Bubble: React.FC<BubbleProps> = ({
   );
 
   return (
-    <div
-      className="bubble"
-      style={{
-        left: data.x,
-        top: data.y,
-        width: data.w,
-        height: data.h,
-      }}
-    >
-      {/* Zone de drag principale (poignée centrale en haut) */}
+    <div className="bubble" style={{ left: data.x, top: data.y, width: data.w, height: data.h }}>
+      {/* central drag handle (invisible bar or small handle) */}
       <div
         className="bubble-drag"
         onMouseDown={(e) => onStartMove(data.id, e)}
         title="Glisser pour déplacer"
       />
 
-      {/* Poignées (cercles oranges) */}
-      <div className="bubble-dot top" onMouseDown={(e) => onStartMove(data.id, e)} />
-      <div className="bubble-dot left" onMouseDown={(e) => onStartMove(data.id, e)} />
-      <div className="bubble-dot right" onMouseDown={(e) => onStartMove(data.id, e)} />
-      <div className="bubble-dot bottom" onMouseDown={(e) => onStartMove(data.id, e)} />
+      {/* move handles (small orange circles) */}
+          {/* Removed duplicate move handles */}
 
-      {/* Bouton suppression */}
+      {/* link handles: use pointer events and stop propagation */}
+      <div
+        className="bubble-link top"
+        onPointerDown={(e) => { e.stopPropagation(); e.preventDefault(); onStartLink(data.id, "top", e as unknown as React.MouseEvent); }}
+        onPointerUp={(e) => { e.stopPropagation(); e.preventDefault(); onFinishLink(data.id, "top", e as unknown as React.MouseEvent); }}
+      />
+      <div
+        className="bubble-link left"
+        onPointerDown={(e) => { e.stopPropagation(); e.preventDefault(); onStartLink(data.id, "left", e as unknown as React.MouseEvent); }}
+        onPointerUp={(e) => { e.stopPropagation(); e.preventDefault(); onFinishLink(data.id, "left", e as unknown as React.MouseEvent); }}
+      />
+      <div
+        className="bubble-link right"
+        onPointerDown={(e) => { e.stopPropagation(); e.preventDefault(); onStartLink(data.id, "right", e as unknown as React.MouseEvent); }}
+        onPointerUp={(e) => { e.stopPropagation(); e.preventDefault(); onFinishLink(data.id, "right", e as unknown as React.MouseEvent); }}
+      />
+      <div
+        className="bubble-link bottom"
+        onPointerDown={(e) => { e.stopPropagation(); e.preventDefault(); onStartLink(data.id, "bottom", e as unknown as React.MouseEvent); }}
+        onPointerUp={(e) => { e.stopPropagation(); e.preventDefault(); onFinishLink(data.id, "bottom", e as unknown as React.MouseEvent); }}
+      />
+
+      {/* remove button */}
       <button
         className="bubble-remove"
         onClick={() => onRemove(data.id)}
@@ -78,7 +92,6 @@ export const Bubble: React.FC<BubbleProps> = ({
         ✕
       </button>
 
-      {/* Contenu */}
       <div className="bubble-content">
         {data.type === "text" ? (
           <div
@@ -95,7 +108,7 @@ export const Bubble: React.FC<BubbleProps> = ({
         )}
       </div>
 
-      {/* Poignée de redimensionnement (coin bas droit) */}
+      {/* resize handle (bottom-right) */}
       <div
         className="bubble-resize"
         onMouseDown={(e) => onStartResize(data.id, e)}
