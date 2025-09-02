@@ -10,6 +10,8 @@ type BubbleProps = {
   onContentChange: (id: string, content: string) => void;
   onStartMove: (id: string, e: React.MouseEvent) => void;
   onStartResize: (id: string, e: React.MouseEvent) => void;
+  onStartLink: (id: string, side: string, e: React.MouseEvent) => void;
+  onFinishLink: (id: string, side: string, e: React.MouseEvent) => void;
 };
 
 export const Bubble: React.FC<BubbleProps> = ({
@@ -18,6 +20,8 @@ export const Bubble: React.FC<BubbleProps> = ({
   onContentChange,
   onStartMove,
   onStartResize,
+  onStartLink,
+  onFinishLink,
 }) => {
   const handleContentBlur = useCallback(
     (e: React.FocusEvent<HTMLDivElement>) => {
@@ -37,24 +41,36 @@ export const Bubble: React.FC<BubbleProps> = ({
         height: data.h,
       }}
     >
-      {/* Zone de drag */}
       <div
         className="bubble-drag"
         onMouseDown={(e) => onStartMove(data.id, e)}
       />
 
-      {/* Décorations */}
-      <div className="bubble-dot top" />
-      <div className="bubble-dot left" />
-      <div className="bubble-dot right" />
-      <div className="bubble-dot bottom" />
+      <div
+        className="bubble-dot top"
+        onMouseDown={(e) => onStartLink(data.id, "top", e)}
+        onMouseUp={(e) => onFinishLink(data.id, "top", e)}
+      />
+      <div
+        className="bubble-dot left"
+        onMouseDown={(e) => onStartLink(data.id, "left", e)}
+        onMouseUp={(e) => onFinishLink(data.id, "left", e)}
+      />
+      <div
+        className="bubble-dot right"
+        onMouseDown={(e) => onStartLink(data.id, "right", e)}
+        onMouseUp={(e) => onFinishLink(data.id, "right", e)}
+      />
+      <div
+        className="bubble-dot bottom"
+        onMouseDown={(e) => onStartLink(data.id, "bottom", e)}
+        onMouseUp={(e) => onFinishLink(data.id, "bottom", e)}
+      />
 
-      {/* Bouton suppression */}
       <button className="bubble-remove" onClick={() => onRemove(data.id)}>
         ✕
       </button>
 
-      {/* Contenu */}
       <div className="bubble-content">
         {data.type === "text" ? (
           <div
@@ -70,7 +86,6 @@ export const Bubble: React.FC<BubbleProps> = ({
         )}
       </div>
 
-      {/* Resize */}
       <div
         className="bubble-resize"
         onMouseDown={(e) => onStartResize(data.id, e)}

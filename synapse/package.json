@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "web": "web-ext run --devtools --source-dir dist --firefox '/home/mateo/Téléchargements/firefox/firefox' --firefox-profile 'dev'"
+    "web": "web-ext run --devtools --source-dir dist"
   },
   "dependencies": {
     "react": "^19.1.1",
