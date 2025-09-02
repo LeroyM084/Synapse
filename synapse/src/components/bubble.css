@@ -1,0 +1,105 @@
+.bubble {
+  position: absolute;
+  background: #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Drag zone */
+.bubble-drag {
+  height: 20px;
+  background: repeating-linear-gradient(
+    to right,
+    #fff,
+    #fff 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  cursor: move;
+}
+
+/* Content */
+.bubble-content {
+  flex: 1;
+  padding: 12px;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.bubble-text {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  color: #000;
+  font-size: 16px;
+  cursor: text;
+  word-break: break-word;
+}
+
+.bubble-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Décorations oranges */
+.bubble-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ff9100;
+  border-radius: 50%;
+}
+
+.bubble-dot.top {
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bubble-dot.bottom {
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bubble-dot.left {
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.bubble-dot.right {
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Remove button */
+.bubble-remove {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 50%;
+  background: #ff4444;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Resize handle (triangle) */
+.bubble-resize {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-top: 18px solid transparent;
+  border-right: 18px solid #ff9100;
+  border-bottom: 18px solid #ff9100;
+  cursor: nwse-resize;
+}
