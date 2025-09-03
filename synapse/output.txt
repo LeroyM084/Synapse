@@ -1,23 +1,23 @@
 
 ================================================================================
 File: dist\assets\popup.css
-Size: 3.25 kB
+Size: 4.81 kB
 ================================================================================
 
-:root{font-family:system-ui,Avenir,Helvetica,Arial,sans-serif;line-height:1.5;font-weight:400;color-scheme:light dark;color:#ffffffde;background-color:#242424;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}a{font-weight:500;color:#646cff;text-decoration:inherit}a:hover{color:#535bf2}body{margin:0;display:flex;place-items:center;width:900px;height:700px}h1{font-size:3.2em;line-height:1.1}button{border-radius:8px;border:1px solid transparent;padding:.6em 1.2em;font-size:1em;font-weight:500;font-family:inherit;background-color:#1a1a1a;cursor:pointer;transition:border-color .25s}button:hover{border-color:#646cff}button:focus,button:focus-visible{outline:4px auto -webkit-focus-ring-color}@media (prefers-color-scheme: light){:root{color:#213547;background-color:#fff}a:hover{color:#747bff}button{background-color:#f9f9f9}}#root{width:100vw;height:100vh;margin:0;padding:0;overflow:hidden}.logo{height:6em;padding:1.5em;will-change:filter;transition:filter .3s}.logo:hover{filter:drop-shadow(0 0 2em #646cffaa)}.logo.react:hover{filter:drop-shadow(0 0 2em #61dafbaa)}@keyframes logo-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}@media (prefers-reduced-motion: no-preference){a:nth-of-type(2) .logo{animation:logo-spin infinite 20s linear}}.card{padding:2em}.read-the-docs{color:#888}body{margin:0;padding:0;overflow:hidden}.popup-root{width:100vw;height:100vh;background:#f7f7f7;display:flex;flex-direction:column;overflow:hidden}.topbar{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 8px;background:#ff9100}.canvas{flex:1;position:relative;overflow:hidden;background:#fff;margin:4px;border-radius:4px}.toolbar{padding:4px;display:flex;gap:8px;background:#fff;border-bottom:1px solid #eee}.toolbar button{display:flex;align-items:center;justify-content:center;padding:4px 8px;min-width:32px;height:32px}.toolbar_icon{width:32px;aspect-ratio:1/1;object-fit:cover}.bubble{position:absolute;background:#ddd;border-radius:10px;box-shadow:0 4px 12px #00000026}.bubble-drag{height:20px;background:repeating-linear-gradient(to right,#fff,#fff 2px,transparent 2px,transparent 6px);cursor:move}.bubble-content{flex:1;padding:12px;font-family:sans-serif;position:relative}.bubble-text{width:100%;height:100%;outline:none;color:#000;font-size:16px;cursor:text;word-break:break-word}.bubble-image{max-width:100%;max-height:100%;object-fit:contain}.bubble-dot{position:absolute;width:10px;height:10px;background:#ff9100;border-radius:50%}.bubble-dot.top{top:-10px;left:50%;transform:translate(-50%)}.bubble-dot.bottom{bottom:-10px;left:50%;transform:translate(-50%)}.bubble-dot.left{left:-10px;top:50%;transform:translateY(-50%)}.bubble-dot.right{right:-10px;top:50%;transform:translateY(-50%)}.bubble-remove{position:absolute;top:-8px;right:-8px;width:22px;height:22px;border:none;border-radius:50%;background:#f44;color:#fff;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.bubble-resize{position:absolute;right:0;bottom:0;width:0;height:0;border-left:18px solid transparent;border-top:18px solid transparent;border-right:18px solid #ff9100;border-bottom:18px solid #ff9100;cursor:nwse-resize}
+:root{font-family:system-ui,Avenir,Helvetica,Arial,sans-serif;line-height:1.5;font-weight:400;color-scheme:light dark;color:#ffffffde;background-color:#242424;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}a{font-weight:500;color:#646cff;text-decoration:inherit}a:hover{color:#535bf2}body{margin:0;display:flex;place-items:center;width:900px;height:700px}h1{font-size:3.2em;line-height:1.1}button{border-radius:8px;border:1px solid transparent;padding:.6em 1.2em;font-size:1em;font-weight:500;font-family:inherit;background-color:#1a1a1a;cursor:pointer;transition:border-color .25s}button:hover{border-color:#646cff}button:focus,button:focus-visible{outline:4px auto -webkit-focus-ring-color}@media (prefers-color-scheme: light){:root{color:#213547;background-color:#fff}a:hover{color:#747bff}button{background-color:#f9f9f9}}#root{width:100vw;height:100vh;margin:0;padding:0;overflow:hidden}.logo{height:6em;padding:1.5em;will-change:filter;transition:filter .3s}.logo:hover{filter:drop-shadow(0 0 2em #646cffaa)}.logo.react:hover{filter:drop-shadow(0 0 2em #61dafbaa)}@keyframes logo-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}@media (prefers-reduced-motion: no-preference){a:nth-of-type(2) .logo{animation:logo-spin infinite 20s linear}}.card{padding:2em}.read-the-docs{color:#888}body{margin:0;padding:0;overflow:hidden}.popup-root{width:100vw;height:100vh;background:#f7f7f7;display:flex;flex-direction:column;overflow:hidden}.topbar{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 8px;background:#ff9100}.canvas{flex:1;position:relative;overflow:hidden;background:#fff;margin:4px;border-radius:4px}.toolbar{padding:4px;display:flex;gap:8px;background:#fff;border-bottom:1px solid #eee}.toolbar button{display:flex;align-items:center;justify-content:center;padding:4px 8px;min-width:32px;height:32px}.toolbar_icon{width:32px;aspect-ratio:1/1;object-fit:cover}.editor-toolbar{align-items:center;padding:6px;gap:10px;background:linear-gradient(180deg,#fff,#fbfbfb);border-bottom:1px solid rgba(0,0,0,.06);box-shadow:0 1px #00000008}.text-format-group,.block-group{display:flex;gap:6px;align-items:center}.format-btn,.block-btn{background:#fff;border:1px solid rgba(0,0,0,.06);padding:6px 8px;border-radius:6px;cursor:pointer;font-weight:600;color:#333;box-shadow:0 1px #00000005;transition:background .12s,transform .06s}.format-btn:hover,.block-btn:hover{transform:translateY(-1px)}.format-btn.active,.block-btn.active{background:#ff9100;color:#fff;border-color:#0000000f;box-shadow:0 4px 12px #ff91002e}.divider{width:1px;background:#0000000f;height:28px;margin:0 8px;border-radius:2px}.toolbar_icon{width:20px;height:20px;object-fit:cover}.bubble-text h1,.bubble-text h2,.bubble-text p{margin:0;padding:0;color:#222}.bubble-text h1{font-size:20px;font-weight:700}.bubble-text h2{font-size:16px;font-weight:600;color:#333}.bubble-text p{font-size:14px;font-weight:400;color:#222;line-height:1.3}.bubble-text{outline:none;color:#222;padding:6px;height:100%;width:100%;overflow:auto}.bubble{position:absolute;background:#ddd;border-radius:8px;box-shadow:0 4px 12px #00000026}.bubble-drag{height:20px;background:repeating-linear-gradient(to right,#fff,#fff 2px,transparent 2px,transparent 6px);cursor:move}.bubble-content{flex:1;padding:12px;font-family:sans-serif;position:relative}.bubble-text{width:100%;height:100%;outline:none;color:#000;font-size:16px;cursor:text;word-break:break-word}.bubble-image{max-width:100%;max-height:100%;object-fit:contain}.bubble-dot{position:absolute;width:15px;height:15px;background:#ff9100;border-radius:50%}.bubble-dot.top{top:-10px;left:50%;transform:translate(-50%)}.bubble-dot.bottom{bottom:-10px;left:50%;transform:translate(-50%)}.bubble-dot.left{left:-10px;top:50%;transform:translateY(-50%)}.bubble-dot.right{right:-10px;top:50%;transform:translateY(-50%)}.bubble-remove{position:absolute;top:-8px;right:-8px;width:22px;border:none;border-radius:50%;background:#f44;color:#fff;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.bubble-resize{position:absolute;right:0;bottom:0;width:0;height:0;border-left:18px solid transparent;border-top:18px solid transparent;border-right:18px solid #ff9100;border-bottom:18px solid #ff9100;cursor:nwse-resize;border-radius:8px}.bubble-link{position:absolute;width:12px;height:12px;border-radius:50%;background:#ff9100f2;border:2px solid #fff;box-shadow:0 2px 6px #0000001f;pointer-events:auto;z-index:30}.bubble-link.top{top:-6px;left:50%;transform:translate(-50%)}.bubble-link.left{left:-6px;top:50%;transform:translateY(-50%)}.bubble-link.right{right:-6px;top:50%;transform:translateY(-50%)}.bubble-link.bottom{bottom:-6px;left:50%;transform:translate(-50%)}
 
 
 ================================================================================
 File: dist\background.js
-Size: 10.31 kB
+Size: 546 B
 ================================================================================
 
-function W(l){return l&&l.__esModule&&Object.prototype.hasOwnProperty.call(l,"default")?l.default:l}var w={exports:{}},U=w.exports,L;function D(){return L||(L=1,(function(l,Z){(function(p,k){k(l)})(typeof globalThis<"u"?globalThis:typeof self<"u"?self:U,function(p){if(!(globalThis.chrome&&globalThis.chrome.runtime&&globalThis.chrome.runtime.id))throw new Error("This script should only be loaded in a browser extension.");if(globalThis.browser&&globalThis.browser.runtime&&globalThis.browser.runtime.id)p.exports=globalThis.browser;else{const k="The message port closed before a response was received.",$=x=>{const y={alarms:{clear:{minArgs:0,maxArgs:1},clearAll:{minArgs:0,maxArgs:0},get:{minArgs:0,maxArgs:1},getAll:{minArgs:0,maxArgs:0}},bookmarks:{create:{minArgs:1,maxArgs:1},get:{minArgs:1,maxArgs:1},getChildren:{minArgs:1,maxArgs:1},getRecent:{minArgs:1,maxArgs:1},getSubTree:{minArgs:1,maxArgs:1},getTree:{minArgs:0,maxArgs:0},move:{minArgs:2,maxArgs:2},remove:{minArgs:1,maxArgs:1},removeTree:{minArgs:1,maxArgs:1},search:{minArgs:1,maxArgs:1},update:{minArgs:2,maxArgs:2}},browserAction:{disable:{minArgs:0,maxArgs:1,fallbackToNoCallback:!0},enable:{minArgs:0,maxArgs:1,fallbackToNoCallback:!0},getBadgeBackgroundColor:{minArgs:1,maxArgs:1},getBadgeText:{minArgs:1,maxArgs:1},getPopup:{minArgs:1,maxArgs:1},getTitle:{minArgs:1,maxArgs:1},openPopup:{minArgs:0,maxArgs:0},setBadgeBackgroundColor:{minArgs:1,maxArgs:1,fallbackToNoCallback:!0},setBadgeText:{minArgs:1,maxArgs:1,fallbackToNoCallback:!0},setIcon:{minArgs:1,maxArgs:1},setPopup:{minArgs:1,maxArgs:1,fallbackToNoCallback:!0},setTitle:{minArgs:1,maxArgs:1,fallbackToNoCallback:!0}},browsingData:{remove:{minArgs:2,maxArgs:2},removeCache:{minArgs:1,maxArgs:1},removeCookies:{minArgs:1,maxArgs:1},removeDownloads:{minArgs:1,maxArgs:1},removeFormData:{minArgs:1,maxArgs:1},removeHistory:{minArgs:1,maxArgs:1},removeLocalStorage:{minArgs:1,maxArgs:1},removePasswords:{minArgs:1,maxArgs:1},removePluginData:{minArgs:1,maxArgs:1},settings:{minArgs:0,maxArgs:0}},commands:{getAll:{minArgs:0,maxArgs:0}},contextMenus:{remove:{minArgs:1,maxArgs:1},removeAll:{minArgs:0,maxArgs:0},update:{minArgs:2,maxArgs:2}},cookies:{get:{minArgs:1,maxArgs:1},getAll:{minArgs:1,maxArgs:1},getAllCookieStores:{minArgs:0,maxArgs:0},remove:{minArgs:1,maxArgs:1},set:{minArgs:1,maxArgs:1}},devtools:{inspectedWindow:{eval:{minArgs:1,maxArgs:2,singleCallbackArg:!1}},panels:{create:{minArgs:3,maxArgs:3,singleCallbackArg:!0},elements:{createSidebarPane:{minArgs:1,maxArgs:1}}}},downloads:{cancel:{minArgs:1,maxArgs:1},download:{minArgs:1,maxArgs:1},erase:{minArgs:1,maxArgs:1},getFileIcon:{minArgs:1,maxArgs:2},open:{minArgs:1,maxArgs:1,fallbackToNoCallback:!0},pause:{minArgs:1,maxArgs:1},removeFile:{minArgs:1,maxArgs:1},resume:{minArgs:1,maxArgs:1},search:{minArgs:1,maxArgs:1},show:{minArgs:1,maxArgs:1,fallbackToNoCallback:!0}},extension:{isAllowedFileSchemeAccess:{minArgs:0,maxArgs:0},isAllowedIncognitoAccess:{minArgs:0,maxArgs:0}},history:{addUrl:{minArgs:1,maxArgs:1},deleteAll:{minArgs:0,maxArgs:0},deleteRange:{minArgs:1,maxArgs:1},deleteUrl:{minArgs:1,maxArgs:1},getVisits:{minArgs:1,maxArgs:1},search:{minArgs:1,maxArgs:1}},i18n:{detectLanguage:{minArgs:1,maxArgs:1},getAcceptLanguages:{minArgs:0,maxArgs:0}},identity:{launchWebAuthFlow:{minArgs:1,maxArgs:1}},idle:{queryState:{minArgs:1,maxArgs:1}},management:{get:{minArgs:1,maxArgs:1},getAll:{minArgs:0,maxArgs:0},getSelf:{minArgs:0,maxArgs:0},setEnabled:{minArgs:2,maxArgs:2},uninstallSelf:{minArgs:0,maxArgs:1}},notifications:{clear:{minArgs:1,maxArgs:1},create:{minArgs:1,maxArgs:2},getAll:{minArgs:0,maxArgs:0},getPermissionLevel:{minArgs:0,maxArgs:0},update:{minArgs:2,maxArgs:2}},pageAction:{getPopup:{minArgs:1,maxArgs:1},getTitle:{minArgs:1,maxArgs:1},hide:{minArgs:1,maxArgs:1,fallbackToNoCallback:!0},setIcon:{minArgs:1,maxArgs:1},setPopup:{minArgs:1,maxArgs:1,fallbackToNoCallback:!0},setTitle:{minArgs:1,maxArgs:1,fallbackToNoCallback:!0},show:{minArgs:1,maxArgs:1,fallbackToNoCallback:!0}},permissions:{contains:{minArgs:1,maxArgs:1},getAll:{minArgs:0,maxArgs:0},remove:{minArgs:1,maxArgs:1},request:{minArgs:1,maxArgs:1}},runtime:{getBackgroundPage:{minArgs:0,maxArgs:0},getPlatformInfo:{minArgs:0,maxArgs:0},openOptionsPage:{minArgs:0,maxArgs:0},requestUpdateCheck:{minArgs:0,maxArgs:0},sendMessage:{minArgs:1,maxArgs:3},sendNativeMessage:{minArgs:2,maxArgs:2},setUninstallURL:{minArgs:1,maxArgs:1}},sessions:{getDevices:{minArgs:0,maxArgs:1},getRecentlyClosed:{minArgs:0,maxArgs:1},restore:{minArgs:0,maxArgs:1}},storage:{local:{clear:{minArgs:0,maxArgs:0},get:{minArgs:0,maxArgs:1},getBytesInUse:{minArgs:0,maxArgs:1},remove:{minArgs:1,maxArgs:1},set:{minArgs:1,maxArgs:1}},managed:{get:{minArgs:0,maxArgs:1},getBytesInUse:{minArgs:0,maxArgs:1}},sync:{clear:{minArgs:0,maxArgs:0},get:{minArgs:0,maxArgs:1},getBytesInUse:{minArgs:0,maxArgs:1},remove:{minArgs:1,maxArgs:1},set:{minArgs:1,maxArgs:1}}},tabs:{captureVisibleTab:{minArgs:0,maxArgs:2},create:{minArgs:1,maxArgs:1},detectLanguage:{minArgs:0,maxArgs:1},discard:{minArgs:0,maxArgs:1},duplicate:{minArgs:1,maxArgs:1},executeScript:{minArgs:1,maxArgs:2},get:{minArgs:1,maxArgs:1},getCurrent:{minArgs:0,maxArgs:0},getZoom:{minArgs:0,maxArgs:1},getZoomSettings:{minArgs:0,maxArgs:1},goBack:{minArgs:0,maxArgs:1},goForward:{minArgs:0,maxArgs:1},highlight:{minArgs:1,maxArgs:1},insertCSS:{minArgs:1,maxArgs:2},move:{minArgs:2,maxArgs:2},query:{minArgs:1,maxArgs:1},reload:{minArgs:0,maxArgs:2},remove:{minArgs:1,maxArgs:1},removeCSS:{minArgs:1,maxArgs:2},sendMessage:{minArgs:2,maxArgs:3},setZoom:{minArgs:1,maxArgs:2},setZoomSettings:{minArgs:1,maxArgs:2},update:{minArgs:1,maxArgs:2}},topSites:{get:{minArgs:0,maxArgs:0}},webNavigation:{getAllFrames:{minArgs:1,maxArgs:1},getFrame:{minArgs:1,maxArgs:1}},webRequest:{handlerBehaviorChanged:{minArgs:0,maxArgs:0}},windows:{create:{minArgs:0,maxArgs:1},get:{minArgs:1,maxArgs:2},getAll:{minArgs:0,maxArgs:1},getCurrent:{minArgs:0,maxArgs:1},getLastFocused:{minArgs:0,maxArgs:1},remove:{minArgs:1,maxArgs:1},update:{minArgs:2,maxArgs:2}}};if(Object.keys(y).length===0)throw new Error("api-metadata.json has not been included in browser-polyfill");class E extends WeakMap{constructor(r,n=void 0){super(n),this.createItem=r}get(r){return this.has(r)||this.set(r,this.createItem(r)),super.get(r)}}const O=e=>e&&typeof e=="object"&&typeof e.then=="function",P=(e,r)=>(...n)=>{x.runtime.lastError?e.reject(new Error(x.runtime.lastError.message)):r.singleCallbackArg||n.length<=1&&r.singleCallbackArg!==!1?e.resolve(n[0]):e.resolve(n)},f=e=>e==1?"argument":"arguments",_=(e,r)=>function(g,...t){if(t.length<r.minArgs)throw new Error(`Expected at least ${r.minArgs} ${f(r.minArgs)} for ${e}(), got ${t.length}`);if(t.length>r.maxArgs)throw new Error(`Expected at most ${r.maxArgs} ${f(r.maxArgs)} for ${e}(), got ${t.length}`);return new Promise((a,A)=>{if(r.fallbackToNoCallback)try{g[e](...t,P({resolve:a,reject:A},r))}catch(s){console.warn(`${e} API method doesn't seem to support the callback parameter, falling back to call it without a callback: `,s),g[e](...t),r.fallbackToNoCallback=!1,r.noCallback=!0,a()}else r.noCallback?(g[e](...t),a()):g[e](...t,P({resolve:a,reject:A},r))})},S=(e,r,n)=>new Proxy(r,{apply(g,t,a){return n.call(t,e,...a)}});let b=Function.call.bind(Object.prototype.hasOwnProperty);const h=(e,r={},n={})=>{let g=Object.create(null),t={has(A,s){return s in e||s in g},get(A,s,o){if(s in g)return g[s];if(!(s in e))return;let i=e[s];if(typeof i=="function")if(typeof r[s]=="function")i=S(e,e[s],r[s]);else if(b(n,s)){let u=_(s,n[s]);i=S(e,e[s],u)}else i=i.bind(e);else if(typeof i=="object"&&i!==null&&(b(r,s)||b(n,s)))i=h(i,r[s],n[s]);else if(b(n,"*"))i=h(i,r[s],n["*"]);else return Object.defineProperty(g,s,{configurable:!0,enumerable:!0,get(){return e[s]},set(u){e[s]=u}}),i;return g[s]=i,i},set(A,s,o,i){return s in g?g[s]=o:e[s]=o,!0},defineProperty(A,s,o){return Reflect.defineProperty(g,s,o)},deleteProperty(A,s){return Reflect.deleteProperty(g,s)}},a=Object.create(e);return new Proxy(a,t)},C=e=>({addListener(r,n,...g){r.addListener(e.get(n),...g)},hasListener(r,n){return r.hasListener(e.get(n))},removeListener(r,n){r.removeListener(e.get(n))}}),B=new E(e=>typeof e!="function"?e:function(n){const g=h(n,{},{getContent:{minArgs:0,maxArgs:0}});e(g)}),M=new E(e=>typeof e!="function"?e:function(n,g,t){let a=!1,A,s=new Promise(d=>{A=function(c){a=!0,d(c)}}),o;try{o=e(n,g,A)}catch(d){o=Promise.reject(d)}const i=o!==!0&&O(o);if(o!==!0&&!i&&!a)return!1;const u=d=>{d.then(c=>{t(c)},c=>{let v;c&&(c instanceof Error||typeof c.message=="string")?v=c.message:v="An unexpected error occurred",t({__mozWebExtensionPolyfillReject__:!0,message:v})}).catch(c=>{console.error("Failed to send onMessage rejected reply",c)})};return u(i?o:s),!0}),j=({reject:e,resolve:r},n)=>{x.runtime.lastError?x.runtime.lastError.message===k?r():e(new Error(x.runtime.lastError.message)):n&&n.__mozWebExtensionPolyfillReject__?e(new Error(n.message)):r(n)},R=(e,r,n,...g)=>{if(g.length<r.minArgs)throw new Error(`Expected at least ${r.minArgs} ${f(r.minArgs)} for ${e}(), got ${g.length}`);if(g.length>r.maxArgs)throw new Error(`Expected at most ${r.maxArgs} ${f(r.maxArgs)} for ${e}(), got ${g.length}`);return new Promise((t,a)=>{const A=j.bind(null,{resolve:t,reject:a});g.push(A),n.sendMessage(...g)})},q={devtools:{network:{onRequestFinished:C(B)}},runtime:{onMessage:C(M),onMessageExternal:C(M),sendMessage:R.bind(null,"sendMessage",{minArgs:1,maxArgs:3})},tabs:{sendMessage:R.bind(null,"sendMessage",{minArgs:2,maxArgs:3})}},T={clear:{minArgs:1,maxArgs:1},get:{minArgs:1,maxArgs:1},set:{minArgs:1,maxArgs:1}};return y.privacy={network:{"*":T},services:{"*":T},websites:{"*":T}},h(x,q,y)};p.exports=$(chrome)}})})(w)),w.exports}var I=D();const N=W(I),m=typeof N<"u"?N:chrome;function F(){try{const l=m.runtime.getURL("popup.html");m.windows&&m.windows.create?m.windows.create({url:l,type:"popup",width:900,height:700}):m.runtime&&m.runtime.openOptionsPage&&m.runtime.openOptionsPage()}catch(l){console.error("Failed to open window",l)}}m.action&&m.action.onClicked?m.action.onClicked.addListener(F):m.browserAction&&m.browserAction.onClicked&&m.browserAction.onClicked.addListener(F);m.alarms&&(m.alarms.create("noop",{periodInMinutes:59}),m.alarms.onAlarm.addListener(()=>{}));
+const e=typeof browser<"u"?browser:chrome;function n(){try{const o=e.runtime.getURL("popup.html");e.windows&&e.windows.create?e.windows.create({url:o,type:"popup",width:900,height:700}):e.runtime&&e.runtime.openOptionsPage&&e.runtime.openOptionsPage()}catch(o){console.error("Failed to open window",o)}}e.action&&e.action.onClicked?e.action.onClicked.addListener(n):e.browserAction&&e.browserAction.onClicked&&e.browserAction.onClicked.addListener(n);e.alarms&&(e.alarms.create("noop",{periodInMinutes:59}),e.alarms.onAlarm.addListener(()=>{}));
 
 
 ================================================================================
 File: dist\manifest.json
-Size: 667 B
+Size: 594 B
 ================================================================================
 
 {
@@ -29,34 +29,24 @@ Size: 667 B
     "default_title": "Ouvrir Synapse"
   },
   "background": {
-    "scripts": [
-      "background.js"
-    ],
+    "scripts": ["background.js"],
     "persistent": false
   },
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
-      "css": [
-        "style.css"
-      ],
+      "matches": ["<all_urls>"],
+      "css": ["style.css"],
       "run_at": "document_idle"
     }
   ],
-  "permissions": [
-    "storage",
-    "activeTab"
-  ],
-  "host_permissions": [
-    "<all_urls>"
-  ],
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["<all_urls>"],
   "icons": {
     "48": "icons/vite.svg",
     "128": "icons/vite.svg"
   }
 }
+
 
 ================================================================================
 File: dist\popup.html
@@ -110,13 +100,6 @@ export default tseslint.config([
 
 
 ================================================================================
-File: manifest.json
-Size: 0 B
-================================================================================
-
-
-
-================================================================================
 File: popup.html
 Size: 512 B
 ================================================================================
@@ -140,7 +123,7 @@ Size: 512 B
 
 ================================================================================
 File: public\manifest.json
-Size: 667 B
+Size: 594 B
 ================================================================================
 
 {
@@ -152,34 +135,24 @@ Size: 667 B
     "default_title": "Ouvrir Synapse"
   },
   "background": {
-    "scripts": [
-      "background.js"
-    ],
+    "scripts": ["background.js"],
     "persistent": false
   },
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
-      "css": [
-        "style.css"
-      ],
+      "matches": ["<all_urls>"],
+      "css": ["style.css"],
       "run_at": "document_idle"
     }
   ],
-  "permissions": [
-    "storage",
-    "activeTab"
-  ],
-  "host_permissions": [
-    "<all_urls>"
-  ],
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["<all_urls>"],
   "icons": {
     "48": "icons/vite.svg",
     "128": "icons/vite.svg"
   }
 }
+
 
 ================================================================================
 File: README-EXTENSION.md
@@ -288,7 +261,7 @@ export default tseslint.config([
 
 ================================================================================
 File: src\App.css
-Size: 1.56 kB
+Size: 3.18 kB
 ================================================================================
 
 #root {
@@ -393,135 +366,402 @@ body {
   object-fit: cover;
 }
 
+/* Editor toolbar styles */
+.editor-toolbar {
+  align-items: center;
+  padding: 6px;
+  gap: 10px;
+  background: linear-gradient(180deg,#ffffff,#fbfbfb);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+}
+
+.text-format-group, .block-group {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.format-btn, .block-btn {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+  transition: background .12s, transform .06s;
+}
+.format-btn:hover, .block-btn:hover { transform: translateY(-1px) }
+.format-btn.active, .block-btn.active {
+  background: #ff9100;
+  color: white;
+  border-color: rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(255,145,0,0.18);
+}
+
+/* divider */
+.divider { width: 1px; background: rgba(0,0,0,0.06); height: 28px; margin: 0 8px; border-radius: 2px; }
+
+/* small polish for toolbar icon buttons */
+.toolbar_icon { width: 20px; height: 20px; object-fit: cover; }
+
+/* content styles inside bubbles for the block elements */
+.bubble-text h1, .bubble-text h2, .bubble-text p {
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+.bubble-text h1 { font-size: 20px; font-weight: 700; }
+.bubble-text h2 { font-size: 16px; font-weight: 600; color: #333; }
+.bubble-text p { font-size: 14px; font-weight: 400; color: #222; line-height: 1.3; }
+
+/* ensure contentEditable caret visible */
+.bubble-text { outline: none; color: #222; padding: 6px; height: 100%; width: 100%; overflow: auto; }
+
 
 ================================================================================
 File: src\App.tsx
-Size: 5.47 kB
+Size: 12.6 kB
 ================================================================================
 
-import React, { useCallback, useEffect, useRef, useState } from 'react'
-import { Bubble } from './components/bubbles'
-import type { BubbleData } from './types/bubble'
-import './App.css'
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { Bubble } from "./components/bubbles";
+import { Links } from "./components/links";
+import type { BubbleData } from "./types/bubble";
+import type { LinkData } from "./types/link";
+import "./App.css";
 
-function randId() { return Math.random().toString(36).slice(2,9) }
+function randId() {
+  return Math.random().toString(36).slice(2, 9);
+}
 
 export default function App() {
-  const [bubbles, setBubbles] = useState<BubbleData[]>([])
-  const [draggingId, setDraggingId] = useState<string | null>(null)
-  const [resizingId, setResizingId] = useState<string | null>(null)
-  const canvasRef = useRef<HTMLDivElement | null>(null)
+  // core state
+  const [bubbles, setBubbles] = useState<BubbleData[]>([]);
+  const [links, setLinks] = useState<LinkData[]>([]);
+  const [tempLink, setTempLink] = useState<{
+    startBubbleId: string;
+    startSide: "top" | "bottom" | "left" | "right";
+    x: number;
+    y: number;
+  } | null>(null);
+
+  const [draggingId, setDraggingId] = useState<string | null>(null);
+  const [resizingId, setResizingId] = useState<string | null>(null);
+  const [focusNewBubbleId, setFocusNewBubbleId] = useState<string | null>(null);
+  const canvasRef = useRef<HTMLDivElement | null>(null);
+
   const addTextIcon_URL = "/icons/addtext.png";
-  const addImageIcon_URL = "/icons/addImage.png"
-  const cleanIcon_URL = "/icons/clean.png"
+  const addImageIcon_URL = "/icons/addImage.png";
+  const cleanIcon_URL = "/icons/clean.png";
+  const exportPDF_URL = "/icons/exportPDF.png";
 
-  // keep popup open: this is a UI-level control; background opens a window, window isn't closed automatically
+  // formatting UI state
+  const [isBold, setIsBold] = useState(false);
+  const [isItalic, setIsItalic] = useState(false);
+  const [isUnderline, setIsUnderline] = useState(false);
+  const [blockType, setBlockType] = useState<"H1" | "H2" | "P" | "">("");
 
-  useEffect(()=>{
-    function onWindowMessage(_: MessageEvent){ /* reserved */ }
-    window.addEventListener('message', onWindowMessage)
-    return ()=> window.removeEventListener('message', onWindowMessage)
-  },[])
+  // keep popup open: placeholder listener
+  useEffect(() => {
+    function onWindowMessage(_: MessageEvent) {
+      /* reserved */
+    }
+    window.addEventListener("message", onWindowMessage);
+    return () => window.removeEventListener("message", onWindowMessage);
+  }, []);
 
-  // Drop handling
-  const onDrop = useCallback((e: React.DragEvent)=>{
-    e.preventDefault()
-    const rect = canvasRef.current?.getBoundingClientRect()
-    const x = (e.clientX - (rect?.left||0))
-    const y = (e.clientY - (rect?.top||0))
+  // update formatting buttons when selection changes
+  useEffect(() => {
+    const updateState = () => {
+      try {
+        setIsBold(document.queryCommandState("bold"));
+        setIsItalic(document.queryCommandState("italic"));
+        setIsUnderline(document.queryCommandState("underline"));
 
-    // files (images)
-    const file = e.dataTransfer?.files?.[0]
-    if (file && file.type.startsWith('image/')){
-      const reader = new FileReader()
-      reader.onload = ()=>{
-        setBubbles(prev=>[...prev,{ id: randId(), x, y, w: 200, h: 150, type: 'image', content: String(reader.result)}])
+        const sel = window.getSelection();
+        if (!sel || !sel.anchorNode) {
+          setBlockType("");
+          return;
+        }
+        let el =
+          sel.anchorNode.nodeType === 3
+            ? (sel.anchorNode.parentElement as HTMLElement)
+            : (sel.anchorNode as HTMLElement);
+        while (el && el !== document.body) {
+          const tag = el.tagName;
+          if (tag === "H1" || tag === "H2" || tag === "P") {
+            setBlockType(tag as any);
+            return;
+          }
+          el = el.parentElement as HTMLElement;
+        }
+        setBlockType("P");
+      } catch {
+        /* ignore */
       }
-      reader.readAsDataURL(file)
-      return
+    };
+    document.addEventListener("selectionchange", updateState);
+    return () => document.removeEventListener("selectionchange", updateState);
+  }, []);
+
+  const exec = useCallback((cmd: string, value?: string) => {
+    try {
+      document.execCommand(cmd, false, value);
+      setIsBold(document.queryCommandState("bold"));
+      setIsItalic(document.queryCommandState("italic"));
+      setIsUnderline(document.queryCommandState("underline"));
+    } catch {
+      console.warn("execCommand failed");
+    }
+  }, []);
+
+  const toggleBold = useCallback(() => exec("bold"), [exec]);
+  const toggleItalic = useCallback(() => exec("italic"), [exec]);
+  const toggleUnderline = useCallback(() => exec("underline"), [exec]);
+  const applyBlock = useCallback(
+    (tag: "H1" | "H2" | "P") => {
+      exec("formatBlock", tag);
+      setBlockType(tag);
+    },
+    [exec]
+  );
+
+  // Drop handling (single implementation)
+  const onDrop = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    const rect = canvasRef.current?.getBoundingClientRect();
+    const x = e.clientX - (rect?.left || 0);
+    const y = e.clientY - (rect?.top || 0);
+
+    const file = e.dataTransfer?.files?.[0];
+    if (file && file.type.startsWith("image/")) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setBubbles((prev) => [
+          ...prev,
+          { id: randId(), x, y, w: 200, h: 150, type: "image", content: String(reader.result) },
+        ]);
+      };
+      reader.readAsDataURL(file);
+      return;
     }
 
-    // text
-    const text = e.dataTransfer?.getData('text') || e.dataTransfer?.getData('text/plain')
+    const text = e.dataTransfer?.getData("text") || e.dataTransfer?.getData("text/plain");
     if (text) {
-      setBubbles(prev=>[...prev,{ id: randId(), x, y, w: 220, h: 80, type: 'text', content: text }])
+      setBubbles((prev) => [
+        ...prev,
+        { id: randId(), x, y, w: 220, h: 80, type: "text", content: text },
+      ]);
     }
-  },[])
+  }, []);
 
-  const onDragOver = useCallback((e: React.DragEvent)=>{ e.preventDefault() },[])
+  const onDragOver = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+  }, []);
 
-  // bubble move handlers
-  function startMove(id:string, e: React.MouseEvent){
-    e.stopPropagation(); setDraggingId(id)
+  // move/resize handlers
+  function startMove(id: string, e: React.MouseEvent) {
+    e.stopPropagation();
+    setDraggingId(id);
   }
-  function onMouseMove(e: React.MouseEvent){
-    if (!draggingId) return
-    const rect = canvasRef.current?.getBoundingClientRect()
-    if (!rect) return
-    setBubbles(prev=>prev.map(b=> b.id===draggingId ? {...b, x: e.clientX-rect.left - b.w/2, y: e.clientY-rect.top - b.h/2} : b))
-  }
-  function endMove(){ setDraggingId(null); setResizingId(null) }
-
-  // resizing
-  function startResize(id:string, e: React.MouseEvent){ e.stopPropagation(); setResizingId(id) }
-  function onMouseMoveResize(e: React.MouseEvent){
-    if (!resizingId) return
-    const rect = canvasRef.current?.getBoundingClientRect()
-    if (!rect) return
-    setBubbles(prev=>prev.map(b=> b.id===resizingId ? {...b, w: Math.max(40, e.clientX-rect.left - b.x), h: Math.max(24, e.clientY-rect.top - b.y)} : b))
+  function startResize(id: string, e: React.MouseEvent) {
+    e.stopPropagation();
+    setResizingId(id);
   }
 
-  // remove bubble
-  function removeBubble(id:string){ setBubbles(prev=>prev.filter(b=>b.id!==id)) }
+  function onMouseMove(e: React.MouseEvent) {
+    const rect = canvasRef.current?.getBoundingClientRect();
+    if (!rect) return;
 
-  // toolbar horizontal
-  const Toolbar = ()=> (
-    <div className="toolbar">
-      <button onClick={()=>{ const t=prompt('Texte?'); if(t) setBubbles(prev=>[...prev,{ id: randId(), x:50, y:80, w:220, h:80, type:'text', content:t }]) }}>
-        <img className="toolbar_icon" src={addTextIcon_URL} alt="Ajouter du texte" />
-      </button>
-      <button onClick={()=>{ const url=prompt('Image URL?'); if(url) setBubbles(prev=>[...prev,{ id: randId(), x:80, y:120, w:200, h:140, type:'image', content:url }]) }}>
-        <img className="toolbar_icon" src={addImageIcon_URL} alt = "Ajouter une image" />
-      </button>
-      <button onClick={()=>{ setBubbles([]) }}>
-        <img className = "toolbar_icon" src={cleanIcon_URL} alt="clean"/>
-      </button>
-    </div>
-  )
+    if (draggingId) {
+      setBubbles((prev) =>
+        prev.map((b) =>
+          b.id === draggingId
+            ? { ...b, x: e.clientX - rect.left - b.w / 2, y: e.clientY - rect.top - b.h / 2 }
+            : b
+        )
+      );
+    }
 
+    if (resizingId) {
+      setBubbles((prev) =>
+        prev.map((b) =>
+          b.id === resizingId
+            ? { ...b, w: Math.max(40, e.clientX - rect.left - b.x), h: Math.max(24, e.clientY - rect.top - b.y) }
+            : b
+        )
+      );
+    }
+
+    if (tempLink) {
+      setTempLink({ ...tempLink, x: e.clientX - rect.left, y: e.clientY - rect.top });
+    }
+  }
+
+  function endMove() {
+    setDraggingId(null);
+    setResizingId(null);
+    setTempLink(null);
+  }
+
+  // create bubble & focus logic
+  const createNewTextBubble = useCallback(() => {
+    const newBubble: BubbleData = { id: randId(), type: "text", content: "", x: 100, y: 100, w: 200, h: 100 };
+    setBubbles((prev) => [...prev, newBubble]);
+    return newBubble.id;
+  }, []);
+
+  // bubble modifications
   const handleMove = useCallback((id: string, x: number, y: number) => {
-    setBubbles(prev => prev.map(b => b.id === id ? {...b, x, y} : b))
-  }, [])
-
+    setBubbles((prev) => prev.map((b) => (b.id === id ? { ...b, x, y } : b)));
+  }, []);
   const handleResize = useCallback((id: string, w: number, h: number) => {
-    setBubbles(prev => prev.map(b => b.id === id ? {...b, w, h} : b))
-  }, [])
-
+    setBubbles((prev) => prev.map((b) => (b.id === id ? { ...b, w, h } : b)));
+  }, []);
   const handleContentChange = useCallback((id: string, content: string) => {
-    setBubbles(prev => prev.map(b => b.id === id ? {...b, content} : b))
-  }, [])
+    setBubbles((prev) => prev.map((b) => (b.id === id ? { ...b, content } : b)));
+  }, []);
+
+  // links
+  function onStartLink(bubbleId: string, side: string, e: React.MouseEvent) {
+    e.stopPropagation();
+    e.preventDefault();
+    const rect = canvasRef.current?.getBoundingClientRect();
+    if (!rect) {
+      console.warn('onStartLink: no canvas rect');
+      return;
+    }
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    console.log('onStartLink', { bubbleId, side, x, y });
+    setTempLink({ startBubbleId: bubbleId, startSide: side as any, x, y });
+  }
+
+  function onFinishLink(bubbleId: string, side: string, e: React.MouseEvent) {
+    e.stopPropagation();
+    e.preventDefault();
+    console.log('onFinishLink', { bubbleId, side, tempLink });
+    if (!tempLink) return;
+    const type = window.confirm("Voulez-vous une flèche ? (OK = flèche, Annuler = ligne)") ? "arrow" : "line";
+    const newLink: LinkData = {
+      id: randId(),
+      idStartBubble: tempLink.startBubbleId,
+      idEndBubble: bubbleId,
+      startSide: tempLink.startSide,
+      endSide: side as any,
+      type,
+      color: "#ff9100",
+    };
+    setLinks(prev => [...prev, newLink]);
+    setTempLink(null);
+  }
+
+  function removeBubble(id: string) {
+    setBubbles((prev) => prev.filter((b) => b.id !== id));
+  }
+  function removeLink(id: string) {
+    setLinks((prev) => prev.filter((l) => l.id !== id));
+  }
+
+  //export pdf 
+
+// const exportPDF = async () => {
+//   try {
+//     const jsPDF = (await import("jspdf")).default;
+//     const html2canvas = (await import("html2canvas")).default;
+//     const canvasDiv = canvasRef.current;
+//     if (!canvasDiv) return;
+//     const canvasImage = await html2canvas(canvasDiv);
+//     const imgData = canvasImage.toDataURL("image/png");
+//     const pdf = new jsPDF({
+//       orientation: "landscape",
+//       unit: "px",
+//       format: [canvasDiv.offsetWidth, canvasDiv.offsetHeight],
+//     });
+//     pdf.addImage(
+//       imgData,
+//       "PNG",
+//       0,
+//       0,
+//       canvasDiv.offsetWidth,
+//       canvasDiv.offsetHeight
+//     );
+//     pdf.save("synapse_canvas.pdf");
+//   } catch (err) {
+//     alert("Erreur export PDF: " + err);
+//     console.error(err);
+//   }
+// };
+
+  // Toolbar UI
+  const Toolbar = () => (
+    <div className="toolbar editor-toolbar" role="toolbar" aria-label="Text editor toolbar">
+      <div className="text-format-group">
+        <button className={`format-btn ${isBold ? "active" : ""}`} title="Gras (Ctrl/Cmd+B)" onMouseDown={(e) => e.preventDefault()} onClick={toggleBold}>B</button>
+        <button className={`format-btn ${isItalic ? "active" : ""}`} title="Italique (Ctrl/Cmd+I)" onMouseDown={(e) => e.preventDefault()} onClick={toggleItalic}>I</button>
+        <button className={`format-btn ${isUnderline ? "active" : ""}`} title="Souligné (Ctrl/Cmd+U)" onMouseDown={(e) => e.preventDefault()} onClick={toggleUnderline}>U</button>
+      </div>
+
+      <div className="divider" />
+
+      <div className="block-group" role="group" aria-label="Paragraph style">
+        <button className={`block-btn ${blockType === "H1" ? "active" : ""}`} title="Titre" onMouseDown={(e) => e.preventDefault()} onClick={() => applyBlock("H1")}>Titre</button>
+        <button className={`block-btn ${blockType === "H2" ? "active" : ""}`} title="Sous-titre" onMouseDown={(e) => e.preventDefault()} onClick={() => applyBlock("H2")}>Sous-titre</button>
+        <button className={`block-btn ${blockType === "P" ? "active" : ""}`} title="Corps" onMouseDown={(e) => e.preventDefault()} onClick={() => applyBlock("P")}>Corps</button>
+      </div>
+
+      <div style={{ flex: 1 }} />
+
+      <div style={{ display: "flex", gap: 8 }}>
+        <button
+          onClick={() => {
+            const newBubbleId = createNewTextBubble();
+            setFocusNewBubbleId(newBubbleId);
+          }}
+        >
+          <img className="toolbar_icon" src={addTextIcon_URL} alt="Ajouter du texte" />
+        </button>
+
+        <button
+          onClick={() => {
+            const url = prompt("Image URL?");
+            if (url) setBubbles((prev) => [...prev, { id: randId(), x: 80, y: 120, w: 200, h: 140, type: "image", content: url }]);
+          }}
+        >
+          <img className="toolbar_icon" src={addImageIcon_URL} alt="Ajouter une image" />
+        </button>
+
+        <button onClick={() => setBubbles([])}>
+          <img className="toolbar_icon" src={cleanIcon_URL} alt="clean" />
+        </button>
+        {/* <button onClick={exportPDF}>
+          <img className="toolbar_icon" src={exportPDF_URL} alt="clean" />
+        </button> */}
+      </div>
+    </div>
+  );
 
   return (
     <div className="popup-root">
       <div className="topbar">
-        <div style={{display:'flex', alignItems:'center'}}>
-          <img src="/vite.svg" alt="logo" style={{height:32, marginRight:8}}/>
-          <strong style={{color:'#fff'}}>Synapse</strong>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img src="/vite.svg" alt="logo" style={{ height: 32, marginRight: 8 }} />
+          <strong style={{ color: "#fff" }}>Synapse</strong>
         </div>
-        <button title="Close" onClick={()=> window.close()} style={{background:'transparent', border:'none', color:'#fff', fontSize:18, cursor:'pointer', padding:'4px'}}>✕</button>
+        <button title="Close" onClick={() => window.close()} style={{ background: "transparent", border: "none", color: "#fff", fontSize: 18, cursor: "pointer", padding: "4px" }}>
+          ✕
+        </button>
       </div>
 
       <Toolbar />
 
-      <div ref={canvasRef} 
-        className="canvas" 
-        onDrop={onDrop} 
-        onDragOver={onDragOver} 
-        onMouseMove={(e) => { onMouseMove(e); onMouseMoveResize(e) }} 
-        onMouseUp={endMove} 
-        onMouseLeave={endMove}
-      >
-        {bubbles.map(bubble => (
+      <div ref={canvasRef} className="canvas" onDrop={onDrop} onDragOver={onDragOver} onMouseMove={onMouseMove} onMouseUp={endMove} onMouseLeave={endMove}>
+        <Links links={links} bubbles={bubbles} tempLink={tempLink} onRemoveLink={removeLink} />
+
+        {bubbles.map((bubble) => (
           <Bubble
             key={bubble.id}
             data={bubble}
@@ -531,11 +771,13 @@ export default function App() {
             onContentChange={handleContentChange}
             onStartMove={startMove}
             onStartResize={startResize}
+            onStartLink={onStartLink}
+            onFinishLink={onFinishLink}
           />
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 
@@ -544,11 +786,11 @@ File: src\background.ts
 Size: 1.21 kB
 ================================================================================
 
-import browser from 'webextension-polyfill';
-import type { Browser } from 'webextension-polyfill';
+// import browser from 'webextension-polyfill-ts'
+import type { Browser } from 'webextension-polyfill-ts';
 
-declare const chrome : Browser;
-const api: Browser = (typeof browser !== 'undefined') ? browser : chrome;
+declare const chrome: Browser
+const api: any = typeof browser !== 'undefined' ? browser : chrome;
 
 // background.js - open a persistent popup window when the action is clicked
 function openWindow() {
@@ -562,7 +804,7 @@ function openWindow() {
       api.runtime.openOptionsPage();
     }
   } catch (e) {
-    console.error('Failed to open window', e);
+    console.error('Failed to open window', e);  
   }
 }
 
@@ -581,13 +823,13 @@ if (api.alarms) {
 
 ================================================================================
 File: src\components\bubble.css
-Size: 1.82 kB
+Size: 2.49 kB
 ================================================================================
 
 .bubble {
   position: absolute;
   background: #ddd;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -631,8 +873,8 @@ Size: 1.82 kB
 /* Décorations oranges */
 .bubble-dot {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   background: #ff9100;
   border-radius: 50%;
 }
@@ -664,7 +906,7 @@ Size: 1.82 kB
   top: -8px;
   right: -8px;
   width: 22px;
-  height: 22px;
+
   border: none;
   border-radius: 50%;
   background: #ff4444;
@@ -688,15 +930,34 @@ Size: 1.82 kB
   border-right: 18px solid #ff9100;
   border-bottom: 18px solid #ff9100;
   cursor: nwse-resize;
+  border-radius : 8px;
 }
+
+.bubble-link {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,145,0,0.95); /* visible for debug; set lower opacity or transparent later */
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  pointer-events: auto;
+  z-index: 30;
+}
+
+/* position helpers (if you already have them) */
+.bubble-link.top { top: -6px; left: 50%; transform: translateX(-50%); }
+.bubble-link.left { left: -6px; top: 50%; transform: translateY(-50%); }
+.bubble-link.right { right: -6px; top: 50%; transform: translateY(-50%); }
+.bubble-link.bottom { bottom: -6px; left: 50%; transform: translateX(-50%); }
 
 
 ================================================================================
 File: src\components\bubbles.tsx
-Size: 2.11 kB
+Size: 4.36 kB
 ================================================================================
 
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import type { BubbleData } from "../types/bubble";
 import "./bubble.css";
 
@@ -708,6 +969,8 @@ type BubbleProps = {
   onContentChange: (id: string, content: string) => void;
   onStartMove: (id: string, e: React.MouseEvent) => void;
   onStartResize: (id: string, e: React.MouseEvent) => void;
+  onStartLink: (id: string, side: string, e: React.MouseEvent) => void;
+  onFinishLink: (id: string, side: string, e: React.MouseEvent) => void;
 };
 
 export const Bubble: React.FC<BubbleProps> = ({
@@ -716,46 +979,82 @@ export const Bubble: React.FC<BubbleProps> = ({
   onContentChange,
   onStartMove,
   onStartResize,
+  onStartLink,
+  onFinishLink,
 }) => {
+  const textRef = useRef<HTMLDivElement | null>(null);
+
+  // focus le contenu quand c'est une nouvelle bulle texte vide
+  useEffect(() => {
+    if (data.type === "text" && data.content === "" && textRef.current) {
+      const el = textRef.current;
+      el.focus();
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      range.collapse(true);
+      const sel = window.getSelection();
+      if (sel) {
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    }
+  }, [data.type, data.content]);
+
   const handleContentBlur = useCallback(
     (e: React.FocusEvent<HTMLDivElement>) => {
-      const text = e.target.innerText;
+      const text = (e.target as HTMLDivElement).innerText;
       onContentChange(data.id, text);
     },
     [data.id, onContentChange]
   );
 
   return (
-    <div
-      className="bubble"
-      style={{
-        left: data.x,
-        top: data.y,
-        width: data.w,
-        height: data.h,
-      }}
-    >
-      {/* Zone de drag */}
+    <div className="bubble" style={{ left: data.x, top: data.y, width: data.w, height: data.h }}>
+      {/* central drag handle (invisible bar or small handle) */}
       <div
         className="bubble-drag"
         onMouseDown={(e) => onStartMove(data.id, e)}
+        title="Glisser pour déplacer"
       />
 
-      {/* Décorations */}
-      <div className="bubble-dot top" />
-      <div className="bubble-dot left" />
-      <div className="bubble-dot right" />
-      <div className="bubble-dot bottom" />
+      {/* move handles (small orange circles) */}
+          {/* Removed duplicate move handles */}
 
-      {/* Bouton suppression */}
-      <button className="bubble-remove" onClick={() => onRemove(data.id)}>
+      {/* link handles: use pointer events and stop propagation */}
+      <div
+        className="bubble-link top"
+        onPointerDown={(e) => { e.stopPropagation(); e.preventDefault(); onStartLink(data.id, "top", e as unknown as React.MouseEvent); }}
+        onPointerUp={(e) => { e.stopPropagation(); e.preventDefault(); onFinishLink(data.id, "top", e as unknown as React.MouseEvent); }}
+      />
+      <div
+        className="bubble-link left"
+        onPointerDown={(e) => { e.stopPropagation(); e.preventDefault(); onStartLink(data.id, "left", e as unknown as React.MouseEvent); }}
+        onPointerUp={(e) => { e.stopPropagation(); e.preventDefault(); onFinishLink(data.id, "left", e as unknown as React.MouseEvent); }}
+      />
+      <div
+        className="bubble-link right"
+        onPointerDown={(e) => { e.stopPropagation(); e.preventDefault(); onStartLink(data.id, "right", e as unknown as React.MouseEvent); }}
+        onPointerUp={(e) => { e.stopPropagation(); e.preventDefault(); onFinishLink(data.id, "right", e as unknown as React.MouseEvent); }}
+      />
+      <div
+        className="bubble-link bottom"
+        onPointerDown={(e) => { e.stopPropagation(); e.preventDefault(); onStartLink(data.id, "bottom", e as unknown as React.MouseEvent); }}
+        onPointerUp={(e) => { e.stopPropagation(); e.preventDefault(); onFinishLink(data.id, "bottom", e as unknown as React.MouseEvent); }}
+      />
+
+      {/* remove button */}
+      <button
+        className="bubble-remove"
+        onClick={() => onRemove(data.id)}
+        aria-label="Supprimer la bulle"
+      >
         ✕
       </button>
 
-      {/* Contenu */}
       <div className="bubble-content">
         {data.type === "text" ? (
           <div
+            ref={textRef}
             contentEditable
             suppressContentEditableWarning
             className="bubble-text"
@@ -768,10 +1067,11 @@ export const Bubble: React.FC<BubbleProps> = ({
         )}
       </div>
 
-      {/* Resize */}
+      {/* resize handle (bottom-right) */}
       <div
         className="bubble-resize"
         onMouseDown={(e) => onStartResize(data.id, e)}
+        title="Redimensionner"
       />
     </div>
   );
@@ -787,16 +1087,125 @@ Size: 0 B
 
 ================================================================================
 File: src\components\links.tsx
-Size: 142 B
+Size: 2.97 kB
 ================================================================================
 
 import React from "react";
 import type { LinkData } from "../types/link";
+import type { BubbleData } from "../types/bubble";
 import "./link.css";
 
-type LinkProps = {
-    data: LinkData;
+type TempLink = {
+  startBubbleId: string;
+  startSide: "top" | "bottom" | "left" | "right";
+  x: number;
+  y: number;
+};
+
+type LinksProps = {
+  links: LinkData[];
+  bubbles: BubbleData[];
+  tempLink?: TempLink | null;
+  onRemoveLink: (id: string) => void;
+};
+
+function getDotPosition(
+  bubble: BubbleData,
+  side: "top" | "bottom" | "left" | "right"
+) {
+  switch (side) {
+    case "top":
+      return { x: bubble.x + bubble.w / 2, y: bubble.y };
+    case "bottom":
+      return { x: bubble.x + bubble.w / 2, y: bubble.y + bubble.h };
+    case "left":
+      return { x: bubble.x, y: bubble.y + bubble.h / 2 };
+    case "right":
+      return { x: bubble.x + bubble.w, y: bubble.y + bubble.h / 2 };
+  }
 }
+
+export const Links: React.FC<LinksProps> = ({
+  links,
+  bubbles,
+  tempLink,
+  onRemoveLink,
+}) => {
+  return (
+    <svg
+      className="links-layer"
+      style={{
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        top: 0,
+        left: 0,
+        pointerEvents: "none",
+      }}
+    >
+      {links.map((link) => {
+        const startBubble = bubbles.find((b) => b.id === link.idStartBubble);
+        const endBubble = bubbles.find((b) => b.id === link.idEndBubble);
+        if (!startBubble || !endBubble) return null;
+
+        const start = getDotPosition(startBubble, link.startSide);
+        const end = getDotPosition(endBubble, link.endSide);
+
+        return (
+          <line
+            key={link.id}
+            x1={start.x}
+            y1={start.y}
+            x2={end.x}
+            y2={end.y}
+            stroke={link.color}
+            strokeWidth="2"
+            markerEnd={link.type === "arrow" ? "url(#arrowhead)" : undefined}
+            style={{ cursor: "pointer", pointerEvents: "auto" }}
+            onContextMenu={(e) => {
+              e.preventDefault();
+              onRemoveLink(link.id);
+            }}
+          />
+        );
+      })}
+
+      {tempLink && (() => {
+        const startBubble = bubbles.find(
+          (b) => b.id === tempLink.startBubbleId
+        );
+        if (!startBubble) return null;
+        const start = getDotPosition(startBubble, tempLink.startSide);
+
+        return (
+          <line
+            x1={start.x}
+            y1={start.y}
+            x2={tempLink.x}
+            y2={tempLink.y}
+            stroke="#ff9100"
+            strokeWidth="2"
+            strokeDasharray="4"
+          />
+        );
+      })()}
+
+      <defs>
+        <marker
+          id="arrowhead"
+          markerWidth="10"
+          markerHeight="7"
+          refX="10"
+          refY="3.5"
+          orient="auto"
+        >
+          <polygon points="0 0, 10 3.5, 0 7" fill="#ff9100" />
+        </marker>
+      </defs>
+    </svg>
+  );
+};
+
 
 ================================================================================
 File: src\index.css
@@ -908,13 +1317,15 @@ export type BubbleData = {
 
 ================================================================================
 File: src\types\link.ts
-Size: 132 B
+Size: 230 B
 ================================================================================
 
 export type LinkData = {
   id: string
   idStartBubble: string
   idEndBubble: string
+  startSide: 'top' | 'bottom' | 'left' | 'right'
+  endSide: 'top' | 'bottom' | 'left' | 'right'
   type: 'arrow' | 'line'
   color: string
 }

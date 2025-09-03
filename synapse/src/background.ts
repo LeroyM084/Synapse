@@ -1,8 +1,8 @@
 import browser from 'webextension-polyfill';
 import type { Browser } from 'webextension-polyfill';
 
-declare const chrome : Browser;
-const api: Browser = (typeof browser !== 'undefined') ? browser : chrome;
+declare const chrome: Browser
+const api: any = typeof browser !== 'undefined' ? browser : chrome;
 
 // background.js - open a persistent popup window when the action is clicked
 function openWindow() {
@@ -16,7 +16,7 @@ function openWindow() {
       api.runtime.openOptionsPage();
     }
   } catch (e) {
-    console.error('Failed to open window', e);
+    console.error('Failed to open window', e);  
   }
 }
 
