@@ -5,6 +5,9 @@ import type { BubbleData } from "./types/bubble";
 import type { LinkData } from "./types/link";
 import "./App.css";
 
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+
 function randId() {
   return Math.random().toString(36).slice(2, 9);
 }
@@ -28,6 +31,7 @@ export default function App() {
   const addTextIcon_URL = "/icons/addtext.png";
   const addImageIcon_URL = "/icons/addImage.png";
   const cleanIcon_URL = "/icons/clean.png";
+  const exportPDF_URL = "/icons/exportPDF.png";
 
   // formatting UI state
   const [isBold, setIsBold] = useState(false);
@@ -237,6 +241,35 @@ export default function App() {
     setLinks((prev) => prev.filter((l) => l.id !== id));
   }
 
+  //export pdf 
+
+const exportPDF = async () => {
+  try {
+
+    const canvasDiv = canvasRef.current;
+    if (!canvasDiv) return;
+    const canvasImage = await html2canvas(canvasDiv);
+    const imgData = canvasImage.toDataURL("image/png");
+    const pdf = new jsPDF({
+      orientation: "landscape",
+      unit: "px",
+      format: [canvasDiv.offsetWidth, canvasDiv.offsetHeight],
+    });
+    pdf.addImage(
+      imgData,
+      "PNG",
+      0,
+      0,
+      canvasDiv.offsetWidth,
+      canvasDiv.offsetHeight
+    );
+    pdf.save("synapse_canvas.pdf");
+  } catch (err) {
+    alert("Erreur export PDF: " + err);
+    console.error(err);
+  }
+};
+
   // Toolbar UI
   const Toolbar = () => (
     <div className="toolbar editor-toolbar" role="toolbar" aria-label="Text editor toolbar">
@@ -277,6 +310,9 @@ export default function App() {
 
         <button onClick={() => setBubbles([])}>
           <img className="toolbar_icon" src={cleanIcon_URL} alt="clean" />
+        </button>
+        <button onClick={exportPDF}>
+          <img className="toolbar_icon" src={exportPDF_URL} alt="clean" />
         </button>
       </div>
     </div>
