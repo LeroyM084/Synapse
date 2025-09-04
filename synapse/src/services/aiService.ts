@@ -3,10 +3,14 @@ import promptText from '../prompt.txt?raw';
 
 // Les constantes et l'initialisation du client sont maintenant ici
 <<<<<<< HEAD
+<<<<<<< HEAD
 const HF_ACCESS_TOKEN = process.env.HF_ACCESS_TOKEN;
 =======
 const HF_ACCESS_TOKEN = "exemple";
 >>>>>>> d4fb0ca (hide token)
+=======
+const HF_ACCESS_TOKEN = process.env.HF_ACCESS_TOKEN;
+>>>>>>> b7646ea (hide token)
 const hf = new HfInference(HF_ACCESS_TOKEN);
 
 /**
