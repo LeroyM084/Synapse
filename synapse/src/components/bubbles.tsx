@@ -49,38 +49,48 @@ export const Bubble: React.FC<BubbleProps> = ({
     [data.id, onContentChange]
   );
 
+  // Convertir les événements pointer en événements mouse pour la compatibilité
+  const handleLinkMouseDown = useCallback((side: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    onStartLink(data.id, side, e);
+  }, [data.id, onStartLink]);
+
+  const handleLinkMouseUp = useCallback((side: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    onFinishLink(data.id, side, e);
+  }, [data.id, onFinishLink]);
+
   return (
     <div className="bubble" style={{ left: data.x, top: data.y, width: data.w, height: data.h }}>
-      {/* central drag handle (invisible bar or small handle) */}
+      {/* central drag handle */}
       <div
         className="bubble-drag"
         onMouseDown={(e) => onStartMove(data.id, e)}
         title="Glisser pour déplacer"
       />
 
-      {/* move handles (small orange circles) */}
-          {/* Removed duplicate move handles */}
-
-      {/* link handles: use pointer events and stop propagation */}
+      {/* link handles - utilisation d'événements mouse au lieu de pointer */}
       <div
         className="bubble-link top"
-        onPointerDown={(e) => { e.stopPropagation(); e.preventDefault(); onStartLink(data.id, "top", e as unknown as React.MouseEvent); }}
-        onPointerUp={(e) => { e.stopPropagation(); e.preventDefault(); onFinishLink(data.id, "top", e as unknown as React.MouseEvent); }}
+        onMouseDown={(e) => handleLinkMouseDown("top", e)}
+        onMouseUp={(e) => handleLinkMouseUp("top", e)}
       />
       <div
         className="bubble-link left"
-        onPointerDown={(e) => { e.stopPropagation(); e.preventDefault(); onStartLink(data.id, "left", e as unknown as React.MouseEvent); }}
-        onPointerUp={(e) => { e.stopPropagation(); e.preventDefault(); onFinishLink(data.id, "left", e as unknown as React.MouseEvent); }}
+        onMouseDown={(e) => handleLinkMouseDown("left", e)}
+        onMouseUp={(e) => handleLinkMouseUp("left", e)}
       />
       <div
         className="bubble-link right"
-        onPointerDown={(e) => { e.stopPropagation(); e.preventDefault(); onStartLink(data.id, "right", e as unknown as React.MouseEvent); }}
-        onPointerUp={(e) => { e.stopPropagation(); e.preventDefault(); onFinishLink(data.id, "right", e as unknown as React.MouseEvent); }}
+        onMouseDown={(e) => handleLinkMouseDown("right", e)}
+        onMouseUp={(e) => handleLinkMouseUp("right", e)}
       />
       <div
         className="bubble-link bottom"
-        onPointerDown={(e) => { e.stopPropagation(); e.preventDefault(); onStartLink(data.id, "bottom", e as unknown as React.MouseEvent); }}
-        onPointerUp={(e) => { e.stopPropagation(); e.preventDefault(); onFinishLink(data.id, "bottom", e as unknown as React.MouseEvent); }}
+        onMouseDown={(e) => handleLinkMouseDown("bottom", e)}
+        onMouseUp={(e) => handleLinkMouseUp("bottom", e)}
       />
 
       {/* remove button */}
