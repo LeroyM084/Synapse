@@ -50,7 +50,21 @@ export const Bubble: React.FC<BubbleProps> = ({
   );
 
   return (
-    <div className="bubble" style={{ left: data.x, top: data.y, width: data.w, height: data.h }}>
+    <div
+      className="bubble"
+      style={{
+        left: data.x,
+        top: data.y,
+        width: data.w,
+        height: data.h,
+        fontSize: Math.max(12, Math.min(data.w, data.h) * 0.1) + "px"
+      }}
+      onPointerUp={(e) => {
+        if (e.button === 0) {
+          onFinishLink(data.id, "", e);
+        }
+      }}
+    >
       {/* central drag handle (invisible bar or small handle) */}
       <div
         className="bubble-drag"
@@ -104,7 +118,7 @@ export const Bubble: React.FC<BubbleProps> = ({
             {data.content}
           </div>
         ) : (
-          <img src={data.content} alt="img" className="bubble-image" />
+          <img src={data.content} alt="img" className="bubble-image" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block", pointerEvents: "none" }} draggable={false} />
         )}
       </div>
 

@@ -9,6 +9,7 @@ const __dirname = dirname(__filename)
 export default defineConfig({
   plugins: [react()],
   build: {
+    minify: false,
     outDir: 'dist',
     rollupOptions: {
       input: {

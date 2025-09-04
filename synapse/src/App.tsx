@@ -13,6 +13,7 @@ function randId() {
 }
 
 export default function App() {
+  const [dragOffset, setDragOffset] = useState<{ x: number; y: number } | null>(null);
   // core state
   const [bubbles, setBubbles] = useState<BubbleData[]>([]);
   const [links, setLinks] = useState<LinkData[]>([]);
@@ -115,10 +116,24 @@ export default function App() {
     if (file && file.type.startsWith("image/")) {
       const reader = new FileReader();
       reader.onload = () => {
-        setBubbles((prev) => [
-          ...prev,
-          { id: randId(), x, y, w: 200, h: 150, type: "image", content: String(reader.result) },
-        ]);
+        const img = new window.Image();
+        img.onload = () => {
+setBubbles(prev => [
+            ...prev,
+            {
+              id: randId(),
+              x,
+              y,
+              w: img.naturalWidth,
+              h: img.naturalHeight,
+              w_init: img.naturalWidth,   // pour min resize
+              h_init: img.naturalHeight,  // pour min resize
+              type: "image",
+              content: reader.result as string,
+            },
+          ]);
+        };
+        img.src = String(reader.result);
       };
       reader.readAsDataURL(file);
       return;
@@ -141,6 +156,23 @@ export default function App() {
   function startMove(id: string, e: React.MouseEvent) {
     e.stopPropagation();
     setDraggingId(id);
+
+    // Met la bulle au premier plan (fin du tableau)
+    setBubbles(prev => {
+      const idx = prev.findIndex(b => b.id === id);
+      if (idx === -1) return prev;
+      const bubble = prev[idx];
+      const newArr = [...prev.slice(0, idx), ...prev.slice(idx + 1), bubble];
+      return newArr;
+    });
+
+    const rect = canvasRef.current?.getBoundingClientRect();
+    const bubble = bubbles.find(b => b.id === id);
+    if (rect && bubble) {
+      const offsetX = e.clientX - rect.left - bubble.x;
+      const offsetY = e.clientY - rect.top - bubble.y;
+      setDragOffset({ x: offsetX, y: offsetY });
+    }
   }
   function startResize(id: string, e: React.MouseEvent) {
     e.stopPropagation();
@@ -151,13 +183,24 @@ export default function App() {
     const rect = canvasRef.current?.getBoundingClientRect();
     if (!rect) return;
 
-    if (draggingId) {
+    if (draggingId && dragOffset) {
+      const toolbarHeight = 5; // hauteur de la toolbar
+      const canvasHeight = rect.height;
+      const canvasWidth = rect.width;
+
       setBubbles((prev) =>
-        prev.map((b) =>
-          b.id === draggingId
-            ? { ...b, x: e.clientX - rect.left - b.w / 2, y: e.clientY - rect.top - b.h / 2 }
-            : b
-        )
+        prev.map((b) => {
+          if (b.id !== draggingId) return b;
+          let newX = e.clientX - rect.left - dragOffset.x;
+          let newY = e.clientY - rect.top - dragOffset.y;
+
+          // Clamp X
+          newX = Math.max(0, Math.min(newX, canvasWidth - b.w));
+          // Clamp Y (empêche sous la toolbar)
+          newY = Math.max(toolbarHeight, Math.min(newY, canvasHeight - b.h));
+
+          return { ...b, x: newX, y: newY };
+        })
       );
     }
 
@@ -177,9 +220,10 @@ export default function App() {
   }
 
   function endMove() {
-    setDraggingId(null);
-    setResizingId(null);
-    setTempLink(null);
+  setDraggingId(null);
+  setResizingId(null);
+  setTempLink(null);
+  setDragOffset(null);
   }
 
   // create bubble & focus logic
@@ -191,10 +235,32 @@ export default function App() {
 
   // bubble modifications
   const handleMove = useCallback((id: string, x: number, y: number) => {
-    setBubbles((prev) => prev.map((b) => (b.id === id ? { ...b, x, y } : b)));
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const rect = canvas.getBoundingClientRect();
+    const toolbarHeight = 48;
+    const canvasWidth = rect.width;
+    const canvasHeight = rect.height;
+
+    setBubbles((prev) =>
+      prev.map((b) => {
+        if (b.id !== id) return b;
+        let newX = Math.max(0, Math.min(x, canvasWidth - b.w));
+        let newY = Math.max(toolbarHeight, Math.min(y, canvasHeight - b.h));
+        return { ...b, x: newX, y: newY };
+      })
+    );
   }, []);
   const handleResize = useCallback((id: string, w: number, h: number) => {
-    setBubbles((prev) => prev.map((b) => (b.id === id ? { ...b, w, h } : b)));
+    setBubbles((prev) => prev.map((b) => {
+      if (b.id !== id) return b;
+      if (b.type === "image") {
+        const minW = b.w_init ?? b.w;
+        const minH = b.h_init ?? b.h;
+        return { ...b, w: Math.max(w, minW), h: Math.max(h, minH) };
+      }
+      return { ...b, w, h };
+    }));
   }, []);
   const handleContentChange = useCallback((id: string, content: string) => {
     setBubbles((prev) => prev.map((b) => (b.id === id ? { ...b, content } : b)));
@@ -218,15 +284,44 @@ export default function App() {
   function onFinishLink(bubbleId: string, side: string, e: React.MouseEvent) {
     e.stopPropagation();
     e.preventDefault();
-    console.log('onFinishLink', { bubbleId, side, tempLink });
     if (!tempLink) return;
+
+    // Trouve la bulle cible
+    const bubble = bubbles.find(b => b.id === bubbleId);
+    if (!bubble) return;
+
+    const rect = canvasRef.current?.getBoundingClientRect();
+    if (!rect) return;
+
+    // Coordonnées du curseur dans le canvas
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    // Coordonnées des centres des côtés de la bulle cible
+    const sides = {
+      top:   { x: bubble.x + bubble.w / 2, y: bubble.y },
+      bottom:{ x: bubble.x + bubble.w / 2, y: bubble.y + bubble.h },
+      left:  { x: bubble.x, y: bubble.y + bubble.h / 2 },
+      right: { x: bubble.x + bubble.w, y: bubble.y + bubble.h / 2 }
+    };
+
+    // Trouve le côté le plus proche du curseur
+    let minDist = Infinity, closestSide = "top";
+    for (const [sideName, pos] of Object.entries(sides)) {
+      const dist = Math.hypot(x - pos.x, y - pos.y);
+      if (dist < minDist) {
+        minDist = dist;
+        closestSide = sideName;
+      }
+    }
+
     const type = window.confirm("Voulez-vous une flèche ? (OK = flèche, Annuler = ligne)") ? "arrow" : "line";
     const newLink: LinkData = {
       id: randId(),
       idStartBubble: tempLink.startBubbleId,
       idEndBubble: bubbleId,
       startSide: tempLink.startSide,
-      endSide: side as any,
+      endSide: closestSide as any,
       type,
       color: "#ff9100",
     };

@@ -1,4 +1,5 @@
 .bubble {
+  font-size: calc(8px + 0.08vw + 0.08vh);
   position: absolute;
   background: #ddd;
   border-radius: 8px;
@@ -21,12 +22,14 @@
 /* Content */
 .bubble-content {
   flex: 1;
-  padding: 12px;
+  padding: 12px;              /* pas de marge pour les images */
   font-family: sans-serif;
   position: relative;
+  box-sizing: border-box;
 }
 
 .bubble-text {
+  padding: 12px;
   width: 100%;
   height: 100%;
   outline: none;
@@ -34,12 +37,16 @@
   font-size: 16px;
   cursor: text;
   word-break: break-word;
+  box-sizing: border-box;
 }
 
 .bubble-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+    object-fit: contain;
+  display: block;
+  pointer-events: none;
+  box-sizing: border-box;
 }
 
 /* Décorations oranges */
@@ -75,16 +82,16 @@
 /* Remove button */
 .bubble-remove {
   position: absolute;
-  top: -8px;
-  right: -8px;
-  width: 22px;
+  top: -7px;
+  right: -5px;
+  width: 0.5em;
 
   border: none;
   border-radius: 50%;
   background: #ff4444;
   color: #fff;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.5em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,14 +104,13 @@
   bottom: 0;
   width: 0;
   height: 0;
-  border-left: 18px solid transparent;
-  border-top: 18px solid transparent;
-  border-right: 18px solid #ff9100;
-  border-bottom: 18px solid #ff9100;
+  border-left: 0.8em solid transparent;
+  border-top: 0.8em solid transparent;
+  border-right: 0.8em solid #ff9100;
+  border-bottom: 0.8em solid #ff9100;
   cursor: nwse-resize;
-  border-radius : 8px;
+  border-radius: 8px;
 }
-
 .bubble-link {
   position: absolute;
   width: 12px;
@@ -113,9 +119,32 @@
   background: rgba(255,145,0,0.95); /* visible for debug; set lower opacity or transparent later */
   border: 2px solid #fff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  cursor: pointer;
   pointer-events: auto;
-  z-index: 30;
 }
+
+.bubble-link::before {
+  content: "";
+  position: absolute;
+  top: -4px;    /* agrandit de 4 px tout autour */
+  left: -4px;
+  width: 20px;  /* 12 + 4 + 4 */
+  height: 20px;
+  background: transparent;
+}
+
+/* pour que la bulle image épouse exactement l'image */
+.bubble.image {
+  padding: 0;
+  width: auto;
+  height: auto;
+}
+.bubble.image .bubble-image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 
 /* position helpers (if you already have them) */
 .bubble-link.top { top: -6px; left: 50%; transform: translateX(-50%); }

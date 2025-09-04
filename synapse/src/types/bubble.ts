@@ -4,6 +4,8 @@ export type BubbleData = {
   y: number
   w: number
   h: number
+  w_init?: number
+  h_init?: number
   type: 'text' | 'image'
   content: string
 }
