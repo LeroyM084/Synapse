@@ -4,6 +4,8 @@ import "./bubble.css";
 
 type BubbleProps = {
   data: BubbleData;
+  fontFamily?: string;
+  fontSize?: number;
   onMove: (id: string, x: number, y: number) => void;
   onResize: (id: string, w: number, h: number) => void;
   onRemove: (id: string) => void;
@@ -12,10 +14,14 @@ type BubbleProps = {
   onStartResize: (id: string, e: React.MouseEvent) => void;
   onStartLink: (id: string, side: string, e: React.MouseEvent) => void;
   onFinishLink: (id: string, side: string, e: React.MouseEvent) => void;
+  shouldFocus?: boolean;
+  onFocused?: () => void;
 };
 
 export const Bubble: React.FC<BubbleProps> = ({
   data,
+  fontFamily,
+  fontSize,
   onRemove,
   onContentChange,
   onStartMove,
@@ -114,6 +120,7 @@ export const Bubble: React.FC<BubbleProps> = ({
             suppressContentEditableWarning
             className="bubble-text"
             onBlur={handleContentBlur}
+            style={{ textAlign: 'center', fontFamily: fontFamily || 'Inter, sans-serif', fontSize: (fontSize || 16) + 'px' }}
           >
             {data.content}
           </div>

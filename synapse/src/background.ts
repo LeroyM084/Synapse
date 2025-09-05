@@ -10,7 +10,7 @@ function openWindow() {
     const url = api.runtime.getURL('popup.html');
     // Firefox: browser.windows.create; Chrome compatibility handled as well
     if (api.windows && api.windows.create) {
-      api.windows.create({ url, type: 'popup', width: 900, height: 700 });
+      api.windows.create({ url, type: 'popup', width: 1200, height: 800 });
     } else if (api.runtime && api.runtime.openOptionsPage) {
       // fallback
       api.runtime.openOptionsPage();

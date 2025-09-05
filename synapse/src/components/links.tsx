@@ -56,8 +56,9 @@ export const Links: React.FC<LinksProps> = ({
         const endBubble = bubbles.find((b) => b.id === link.idEndBubble);
         if (!startBubble || !endBubble) return null;
 
-        const start = getDotPosition(startBubble, link.startSide);
-        const end = getDotPosition(endBubble, link.endSide);
+        const start = getDotPosition(startBubble, link.startSide as any);
+        const end = getDotPosition(endBubble, link.endSide as any);
+        if (!start || !end) return null; // lien invalide -> on l'ignore
 
         return (
           <line
@@ -83,7 +84,8 @@ export const Links: React.FC<LinksProps> = ({
           (b) => b.id === tempLink.startBubbleId
         );
         if (!startBubble) return null;
-        const start = getDotPosition(startBubble, tempLink.startSide);
+        const start = getDotPosition(startBubble, tempLink.startSide as any);
+        if (!start) return null;
 
         return (
           <line

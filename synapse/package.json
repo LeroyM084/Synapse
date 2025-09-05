@@ -8,11 +8,13 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "web": "web-ext run --devtools --source-dir dist --firefox-profile default-release"
+    "web": "web-ext run --devtools --source-dir dist --firefox-profile dev --firefox /home/mateo/Téléchargements/firefox/firefox"
   },
   "dependencies": {
+    "@huggingface/inference": "^4.7.1",
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.2",
+    "marked": "^16.2.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "reactflow": "^11.11.4"
