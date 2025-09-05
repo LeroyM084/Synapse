@@ -78,6 +78,13 @@ body {
   border-radius: 4px;
 }
 
+/* Masquer les contrôles UI pendant l'export (pour html2canvas) */
+.canvas.exporting .bubble-remove,
+.canvas.exporting .bubble-drag,
+.canvas.exporting .bubble-link {
+  visibility: hidden !important;
+}
+
 .toolbar {
   padding: 4px;
   display: flex;

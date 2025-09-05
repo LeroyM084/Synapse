@@ -198,26 +198,103 @@ export default function App(): React.ReactElement {
   // Font handlers are applied directly via setFontFamily/setFontSize in Toolbar
 
   // --- Drag/Drop and Bubble Logic ---
-  const onDrop = useCallback((e: React.DragEvent) => {
+  const onDrop = useCallback(async (e: React.DragEvent) => {
     e.preventDefault();
     const rect = canvasRef.current?.getBoundingClientRect();
     if (!rect) return;
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    const file = e.dataTransfer?.files?.[0];
+
+    const dt = e.dataTransfer;
+    if (!dt) return;
+
+    // 1) Fichier local image
+    const file = dt.files?.[0];
     if (file && file.type.startsWith("image/")) {
       const reader = new FileReader();
       reader.onload = () => {
-        setBubbles(prev => [
-          ...prev,
-          { id: randId(), x, y, w: 200, h: 140, type: "image", content: reader.result as string },
-        ]);
+        const img = new Image();
+        img.onload = () => {
+          const maxW = 360, maxH = 260;
+          let w = img.naturalWidth, h = img.naturalHeight;
+          const scale = Math.min(maxW / w, maxH / h, 1);
+          w = Math.max(80, Math.floor(w * scale));
+          h = Math.max(60, Math.floor(h * scale));
+          setBubbles(prev => [...prev, { id: randId(), x, y, w, h, type: "image", content: reader.result as string }]);
+        };
+        img.src = reader.result as string;
       };
       reader.readAsDataURL(file);
+      return;
     }
-  }, []);
 
-  const onDragOver = useCallback((e: React.DragEvent) => e.preventDefault(), []);
+    // 2) Depuis le web: extraire URL image
+    const html = dt.getData('text/html');
+    const uriList = dt.getData('text/uri-list');
+    const plain = dt.getData('text/plain');
+
+    const getImageUrl = (): string | null => {
+      if (html) {
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const imgEl = doc.querySelector('img');
+        if (imgEl && imgEl.getAttribute('src')) return imgEl.getAttribute('src') as string;
+      }
+      const candidate = (uriList || plain || '').trim().split('\n')[0];
+      if (/\.(png|jpe?g|gif|webp|svg)(\?.*)?$/i.test(candidate)) return candidate;
+      return null;
+    };
+
+    const imageUrl = getImageUrl();
+    if (imageUrl) {
+      try {
+        await new Promise<void>((resolve, reject) => {
+          const img = new Image();
+          img.crossOrigin = 'anonymous';
+          img.onload = () => {
+            const maxW = 360, maxH = 260;
+            let w = img.naturalWidth, h = img.naturalHeight;
+            const scale = Math.min(maxW / w, maxH / h, 1);
+            w = Math.max(80, Math.floor(w * scale));
+            h = Math.max(60, Math.floor(h * scale));
+            setBubbles(prev => [...prev, { id: randId(), x, y, w, h, type: 'image', content: imageUrl }]);
+            resolve();
+          };
+          img.onerror = () => reject(new Error('img load failed'));
+          img.src = imageUrl;
+        });
+      } catch {
+        setBubbles(prev => [...prev, { id: randId(), x, y, w: 200, h: 140, type: 'image', content: imageUrl }]);
+      }
+      return;
+    }
+
+    // 3) Texte
+    const textContent = plain || (html ? new DOMParser().parseFromString(html, 'text/html').body.textContent || '' : '');
+    if (textContent && textContent.trim().length > 0) {
+      const measurer = document.createElement('div');
+      measurer.style.position = 'absolute';
+      measurer.style.left = '-9999px';
+      measurer.style.top = '0';
+      measurer.style.whiteSpace = 'pre-wrap';
+      measurer.style.wordBreak = 'break-word';
+      measurer.style.padding = '6px';
+      measurer.style.fontFamily = fontFamily;
+      measurer.style.fontSize = fontSize + 'px';
+      measurer.style.lineHeight = '1.3';
+      measurer.style.maxWidth = '420px';
+      measurer.textContent = textContent;
+      document.body.appendChild(measurer);
+      const rectM = measurer.getBoundingClientRect();
+      document.body.removeChild(measurer);
+      const paddingX = 12, paddingY = 12;
+      const w = Math.max(140, Math.min(420, Math.ceil(rectM.width) + paddingX));
+      const h = Math.max(80, Math.min(300, Math.ceil(rectM.height) + paddingY));
+      setBubbles(prev => [...prev, { id: randId(), x, y, w, h, type: 'text', content: textContent }]);
+      return;
+    }
+  }, [fontFamily, fontSize]);
+
+  const onDragOver = useCallback((e: React.DragEvent) => { e.preventDefault(); if (e.dataTransfer) e.dataTransfer.dropEffect = 'copy'; }, []);
 
   // --- Move/Resize/Content handlers ---
   const startMove = useCallback((id: string, e: React.MouseEvent) => {
@@ -406,7 +483,7 @@ export default function App(): React.ReactElement {
       />
       <div
         ref={canvasRef}
-        className="canvas"
+        className={`canvas${exporting ? ' exporting' : ''}`}
         onDrop={onDrop}
         onDragOver={onDragOver}
         onMouseMove={onMouseMove}
